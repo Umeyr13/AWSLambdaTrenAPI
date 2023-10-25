@@ -40,13 +40,13 @@ namespace TrenAPI.Controllers
 
                     for (int i = 0; i < vagonlar.Count; i++)
                     {
-                        if (RezervasyonYapilacakKisiSayisi != 0 && RezervasyonYapilacakKisiSayisi > kapasiteler[i])
-                        {
-                            SonucModel.RezervasyonYapilabilir = true;
-                            SonucModel.YerlesimAyrinti.Add(new YerlesimAyrinti { VagonAdi = vagonlar[i].Ad, KisiSayisi = kapasiteler[i] });
+                        //if (RezervasyonYapilacakKisiSayisi != 0 && RezervasyonYapilacakKisiSayisi > kapasiteler[i])
+                        //{
+                        //    SonucModel.RezervasyonYapilabilir = true;
+                        //    SonucModel.YerlesimAyrinti.Add(new YerlesimAyrinti { VagonAdi = vagonlar[i].Ad, KisiSayisi = kapasiteler[i] });
 
-                        }
-                        if (RezervasyonYapilacakKisiSayisi != 0 && RezervasyonYapilacakKisiSayisi < kapasiteler[i])
+                        //}
+                        if (RezervasyonYapilacakKisiSayisi != 0 && RezervasyonYapilacakKisiSayisi <= kapasiteler[i])
                         {
                             SonucModel.RezervasyonYapilabilir = true;
                             SonucModel.YerlesimAyrinti.Add(new YerlesimAyrinti { VagonAdi = vagonlar[i].Ad, KisiSayisi = RezervasyonYapilacakKisiSayisi });
